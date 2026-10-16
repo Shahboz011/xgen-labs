@@ -1,0 +1,187 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-ink: #070807;
+  --color-coal: #0e100e;
+  --color-panel: #141714;
+  --color-line: #262a25;
+  --color-lime: #c4f000;
+  --color-lime-bright: #d6ff2e;
+  --color-mute: #9aa197;
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-brush: var(--font-brush);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background: var(--color-ink);
+    color: #f2f4f0;
+  }
+
+  ::selection {
+    background: var(--color-lime);
+    color: #000;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/*
+ * Brand classes are declared with @utility so they live in Tailwind's utilities
+ * layer: single-purpose utilities (text-*, tracking-*, hidden, …) placed on the
+ * same element override them, as expected.
+ */
+
+/* Wide, heavy headline face (Saira on its widest axis) */
+@utility display {
+  font-family: var(--font-display);
+  font-stretch: 125%;
+  font-weight: 800;
+  text-transform: uppercase;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+}
+
+/* Small spaced uppercase labels */
+@utility eyebrow {
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.32em;
+  font-size: 0.75rem;
+}
+
+/* Condensed, heavy, slanted hero headline (Saira on a narrow width axis) */
+@utility hero-title {
+  font-family: var(--font-display);
+  font-stretch: 78%;
+  font-weight: 900;
+  font-style: italic;
+  text-transform: uppercase;
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  font-size: clamp(3.6rem, 8.4vw, 7.6rem);
+}
+
+/* Red-hot gradient text used for product names in the hero */
+@utility red-hot {
+  background: linear-gradient(180deg, #ff4b3a 0%, #ff1d1d 45%, #c30000 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 3px 0 rgb(0 0 0 / 0.6));
+}
+
+@utility brush {
+  font-family: var(--font-brush);
+  text-transform: uppercase;
+  line-height: 0.9;
+}
+
+@utility chrome {
+  background: linear-gradient(180deg, #ffffff 0%, #e3e6e1 45%, #8e948b 52%, #f4f6f2 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px rgb(196 240 0 / 0.35);
+}
+
+@utility btn-lime {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--color-lime);
+  color: #050505;
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 0.85rem;
+  padding: 0.95rem 1.6rem;
+  border-radius: 4px;
+  transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
+  &:hover {
+    background: var(--color-lime-bright);
+    box-shadow: 0 0 32px rgb(196 240 0 / 0.45);
+  }
+  &:active {
+    transform: translateY(1px);
+  }
+}
+
+@utility btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--color-lime);
+  color: var(--color-lime);
+  font-family: var(--font-display);
+  font-stretch: 110%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  padding: 0.7rem 1.2rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  &:hover {
+    background: var(--color-lime);
+    color: #050505;
+  }
+}
+
+/* Slanted lime stripes used behind hero art */
+@utility stripes {
+  background-image: repeating-linear-gradient(-55deg, transparent 0 90px, rgb(196 240 0 / 0.08) 90px 150px);
+}
+
+@utility noise {
+  background-image: radial-gradient(rgb(255 255 255 / 0.035) 1px, transparent 1px);
+  background-size: 3px 3px;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@utility rise {
+  animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
+
+@utility marquee {
+  animation: marquee 38s linear infinite;
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
+}
