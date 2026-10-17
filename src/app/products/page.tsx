@@ -8,9 +8,9 @@ import { JsonLd } from "@/components/JsonLd";
 import { absoluteUrl, pageMetadata } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Products — Muscle Protein 100% Whey & Muscle Gainer",
+  title: "Products — Whey Protein, Mass Gainers & Creatine",
   description:
-    "Explore XGENS LABS sports nutrition: Muscle Protein 100% Whey (25g protein, 6.6g BCAAs) and Muscle Gainer Max Mass Formula (1000 calories per serving).",
+    "Explore XGENS LABS sports nutrition: Muscle Protein 100% Whey, Muscle Gainer, Whey Protein X, Mass Gainer X and Creatine X micronized creatine monohydrate.",
   path: "/products",
 });
 

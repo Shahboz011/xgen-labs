@@ -1,4 +1,4 @@
-export type CategoryId = "protein" | "gainers";
+export type CategoryId = "protein" | "gainers" | "creatine";
 
 export type Category = {
   id: CategoryId;
@@ -27,6 +27,7 @@ export type Product = {
 export const categories: Category[] = [
   { id: "protein", name: "Protein", tagline: "Build lean muscle", image: "/img/products/muscle-protein.webp" },
   { id: "gainers", name: "Gainers", tagline: "Mass & strength", image: "/img/products/muscle-gainer.webp" },
+  { id: "creatine", name: "Creatine", tagline: "Strength & power", image: "/img/products/creatine-x.webp" },
 ];
 
 export const products: Product[] = [
@@ -75,6 +76,92 @@ export const products: Product[] = [
       "25 g of protein for muscle growth",
       "5 g of BCAAs for recovery",
     ],
+    usage: "Mix one serving with milk or water. Take between meals or after training. See the label for full directions.",
+  },
+  {
+    slug: "creatine-x",
+    name: "Creatine X",
+    line: "Micronized Monohydrate",
+    category: "creatine",
+    size: "300 g",
+    image: "/img/products/creatine-x.webp",
+    badge: "New",
+    stats: [
+      { value: "5g", label: "Creatine" },
+      { value: "60", label: "Servings" },
+      { value: "100%", label: "Pure" },
+    ],
+    highlights: ["100% pure creatine monohydrate", "Micronized", "Dietary supplement"],
+    description:
+      "Creatine X is 100% pure, micronized creatine monohydrate in a 300 g pack — made to increase strength, boost performance and support muscle growth.",
+    benefits: [
+      "100% pure creatine monohydrate",
+      "Micronized for easy mixing",
+      "Increases strength and boosts performance",
+      "Supports muscle growth",
+    ],
+    usage: "Mix one 5 g serving with water or your shake once a day. See the label for full directions.",
+  },
+  {
+    slug: "creatine-x-lime",
+    name: "Creatine X Lime",
+    line: "Creatine Monohydrate",
+    category: "creatine",
+    size: "300 g",
+    image: "/img/products/creatine-x-lime.webp",
+    badge: "New",
+    stats: [
+      { value: "5g", label: "Creatine" },
+      { value: "60", label: "Servings" },
+      { value: "100%", label: "Pure" },
+    ],
+    highlights: ["Micronized", "Strength", "Power", "Performance"],
+    description:
+      "Creatine X in the lime pack: micronized creatine monohydrate with 5 g per serving, for strength, power and performance.",
+    benefits: [
+      "5 g of creatine monohydrate per serving",
+      "Micronized for easy mixing",
+      "Supports strength and power",
+      "Built for training performance",
+    ],
+    usage: "Mix one 5 g serving with water or your shake once a day. See the label for full directions.",
+  },
+  {
+    slug: "whey-protein-x",
+    name: "Whey Protein X",
+    line: "Whey Protein",
+    category: "protein",
+    size: "Pouch",
+    image: "/img/products/whey-protein-x.webp",
+    badge: "New",
+    stats: [
+      { value: "Whey", label: "Protein" },
+      { value: "Lean", label: "Muscle" },
+      { value: "Fast", label: "Recovery" },
+    ],
+    highlights: ["Whey protein", "Muscle growth", "Recovery"],
+    description:
+      "Whey Protein X is XGENS LABS whey protein in the X-series pouch — an easy daily protein to support lean muscle and recovery.",
+    benefits: ["Whey protein formula", "Supports lean muscle growth", "Supports recovery after training"],
+    usage: "Mix one serving with water or milk and drink after training or between meals. See the label for full directions.",
+  },
+  {
+    slug: "mass-gainer-x",
+    name: "Mass Gainer X",
+    line: "Carbohydrate + Protein",
+    category: "gainers",
+    size: "Pouch",
+    image: "/img/products/mass-gainer-x.webp",
+    badge: "New",
+    stats: [
+      { value: "Carbs", label: "Energy" },
+      { value: "Protein", label: "Muscle" },
+      { value: "Mass", label: "Size" },
+    ],
+    highlights: ["Carbohydrate + protein", "Weight gainer", "Mass & strength"],
+    description:
+      "Mass Gainer X combines carbohydrates and protein in one shake to help you add size and fuel hard training.",
+    benefits: ["Carbohydrates for training energy", "Protein for muscle growth", "Helps you add size and strength"],
     usage: "Mix one serving with milk or water. Take between meals or after training. See the label for full directions.",
   },
 ];
